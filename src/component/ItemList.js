@@ -1,16 +1,15 @@
-import Link from 'next/link';
-import React from 'react'
-import { Grid } from 'semantic-ui-react'
+import { Grid } from "semantic-ui-react";
 import styles from "./ItemList.module.css";
+import Link from "next/link";
 
-const ItemList = ({ list }) => {
+export default function ItemList({ list }) {
   return (
     <div>
       <Grid columns={3}>
         <Grid.Row>
           {list.map((item) => (
             <Grid.Column key={item.id}>
-              <Link href="/view/[id]" as={`/view/${item.id}`}>
+              <Link href="/detail/[id]" as={`/detail/${item.id}`}>
                 <a>
                   <div className={styles.wrap}>
                     <img
@@ -31,7 +30,5 @@ const ItemList = ({ list }) => {
         </Grid.Row>
       </Grid>
     </div>
-  )
+  );
 }
-
-export default ItemList

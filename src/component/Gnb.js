@@ -3,9 +3,16 @@ import React from 'react'
 import { Menu } from 'semantic-ui-react'
 
 const Gnb = () => {
-  const activeItem = "Home"
   const router = useRouter();
   console.log(router);
+
+  let activeItem;
+
+  if(router.pathname === "/") {
+    activeItem = "Home";
+  } else if (router.pathname === "/about") {
+    activeItem = "About";
+  }
 
   const goLink = (e, data) => {
     if(data.name === 'Home'){

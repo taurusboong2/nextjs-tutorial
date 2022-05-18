@@ -5,7 +5,6 @@ import ItemList from '../src/component/ItemList'
 import { Header, Divider } from 'semantic-ui-react'
 
 
-
 export default function Home() {
   const API_URL = "http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline"
 
@@ -26,7 +25,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div>
+      <div>
       <Head>
         <title>Home | TauBoong</title>
       </Head>
@@ -36,6 +35,6 @@ export default function Home() {
       <Header as="h3" style={{ paddingTop: 40 }}>신상품</Header>
       <Divider />
       <ItemList list={list.slice(9)} />
-    </div>
+      </div>
   )
 }

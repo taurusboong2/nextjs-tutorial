@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react'
-import { Grid, List } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 import styles from "./ItemList.module.css";
 
 const ItemList = ({ list }) => {
@@ -10,7 +10,7 @@ const ItemList = ({ list }) => {
         <Grid.Row>
           {list.map((item) => (
             <Grid.Column key={item.id}>
-              <Link href={`/view/${item.id}`}>
+              <Link href="/view/[id]" as={`/view/${item.id}`}>
                 <a>
                   <div className={styles.wrap}>
                     <img
